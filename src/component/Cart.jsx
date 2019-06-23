@@ -27,7 +27,7 @@ const Cart = ({
       return cartItem.quantity * cartItem.price;
     })
     .reduce((cur, acc) => {
-      return Math.floor(cur + acc);
+      return Math.ceil(cur + acc);
     }, 0);
 
   const submitCart = () => {

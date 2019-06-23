@@ -28,7 +28,7 @@ const CartItem = ({
         <h4>{cart.title}</h4>
         <div className={style.cartInfo}>
           <span>{cart.style}</span>
-          <span>${Math.floor(cart.price * cart.quantity)}.0</span>
+          <span>${Math.ceil(cart.price * cart.quantity)}.0</span>
         </div>
         <p>Quantity:{cart.quantity}</p>
         <div>
