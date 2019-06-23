@@ -1,0 +1,51 @@
+.sizesContainer {
+  width: 25rem;
+}
+
+.sizes {
+  display: inline-block;
+}
+
+.sizes label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 35px;
+  height: 35px;
+  font-size: 0.8em;
+  border-radius: 50%;
+  line-height: 34px;
+  text-align: center;
+  margin: 0.7rem 0.3rem;
+  border: 1px solid var(--grey-color-1);
+}
+
+.sizes label:hover {
+  border: 1px solid var(--black-color);
+}
+
+.sizes input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sizes input:checked ~ .checkmark {
+  background: var(--black-color);
+  color: var(--white-color);
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--grey-color-1);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}

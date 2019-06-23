@@ -1,0 +1,166 @@
+.cartContainer,
+.cartContainerShow {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: -45rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 5000;
+  height: 100%;
+}
+
+.cartContainerShow {
+  right: 0;
+}
+
+.cartBtn {
+  border: none;
+  background: var(--black-color);
+  padding: 12px 12px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+.cartIconX,
+.cartIconSm,
+.cartIconMd {
+  width: 30px;
+  height: 30px;
+  fill: var(--grey-color);
+}
+
+.cartIconMd {
+  width: 40px;
+  height: 40px;
+}
+
+.cartIconX {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  transition: fill 0.2s ease-in-out;
+}
+
+.cartIconX:hover {
+  fill: var(--white-color);
+}
+
+.cartBtn span,
+.cartCheckoutTitle span:nth-child(2) {
+  background: var(--yellow-color);
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 55%;
+  left: 55%;
+}
+
+.cartCheckout {
+  width: 45rem;
+  background: var(--black-color-1);
+  padding: 50px 10px 70px 10px;
+  overflow-y: scroll;
+}
+
+.cartCheckout::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  background-color: var(--black-color);
+  padding: 10px;
+}
+
+.cartCheckoutTitle {
+  position: relative;
+}
+
+.cartCheckoutTitle span:nth-child(2) {
+  position: absolute;
+  top: 25px;
+  left: 195px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.cartCheckoutTitle h4 {
+  color: var(--white-color);
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.cart img {
+  width: 6rem;
+  height: auto;
+}
+
+.cart h4 {
+  color: var(--white-color);
+  margin-left: 2rem;
+}
+
+.cart span,
+.cart p {
+  color: #535257;
+  margin-left: 2rem;
+}
+
+.cartInfo {
+  width: 38rem;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.cartInfo span:nth-child(2) {
+  color: var(--yellow-color);
+}
+
+.close {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+}
+
+.totalContainer {
+  background-color: var(--black-color-1);
+  height: 20rem;
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+.totalContainer h4 {
+  color: var(--grey-color);
+  font-weight: 500;
+}
+
+.totalContainer span {
+  color: var(--yellow-color);
+  padding-right: 80px;
+}
+
+.totalContainer button {
+  border: none;
+  border-top: 1px solid var(--grey-color);
+  border-bottom: 1px solid var(--grey-color);
+  background: none;
+  font-size: 1.8rem;
+  padding: 10px 20px;
+  transition: padding 0.2s ease-in-out;
+  cursor: pointer;
+  color: var(--white-color);
+  outline: none;
+}
+
+.totalContainer button:hover {
+  padding: 10px 180px;
+}

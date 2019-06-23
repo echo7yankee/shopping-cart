@@ -1,0 +1,8 @@
+export const GET_DATA = "GET_DATA";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const DELETE_FROM_CART = "DELETE_FROM_CART";
+export const CLEAR_CART = "CLEAR_CART";
+export const INCREASE_QUANTITY = "INCREASE_QUANTITY";
+export const DECREASE_QUANTITY = "DECREASE_QUANTITY";
+
+export const TOGGLE_CART = "TOGGLE_CART";
