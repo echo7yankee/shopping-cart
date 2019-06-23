@@ -4,7 +4,8 @@ import {
   INCREASE_QUANTITY,
   DELETE_FROM_CART,
   TOGGLE_CART,
-  CLEAR_CART
+  CLEAR_CART,
+  DECREASE_QUANTITY
 } from "../types";
 import data from "../../data/products.json";
 
@@ -30,9 +31,16 @@ export const deleteFromCart = id => {
   };
 };
 
-export const IncreaseQuantity = id => {
+export const increaseQuantity = id => {
   return {
     type: INCREASE_QUANTITY,
+    id
+  };
+};
+
+export const decreaseQuantity = id => {
+  return {
+    type: DECREASE_QUANTITY,
     id
   };
 };

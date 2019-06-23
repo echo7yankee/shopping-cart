@@ -4,13 +4,15 @@ import {
   INCREASE_QUANTITY,
   DELETE_FROM_CART,
   TOGGLE_CART,
-  CLEAR_CART
+  CLEAR_CART,
+  DECREASE_QUANTITY
 } from "../types";
 
 const initialState = {
   products: [],
   cart: [],
-  toggle: false
+  toggle: false,
+  limit: false
 };
 
 export default function(state = initialState, action) {
@@ -56,9 +58,34 @@ export default function(state = initialState, action) {
         ...state,
         cart: state.cart.map(cartItem => {
           if (cartItem.id === action.id) {
+            if (cartItem.quantity >= cartItem.installments) {
+              cartItem = {
+                ...cartItem
+              };
+              return cartItem;
+            }
+
             cartItem = {
               ...cartItem,
               quantity: cartItem.quantity + 1
+            };
+          }
+          return cartItem;
+        })
+      };
+
+    case DECREASE_QUANTITY:
+      return {
+        ...state,
+        cart: state.cart.map(cartItem => {
+          if (cartItem.id === action.id) {
+            if (cartItem.quantity === 1) {
+              return cartItem;
+            }
+
+            cartItem = {
+              ...cartItem,
+              quantity: cartItem.quantity - 1
             };
           }
           return cartItem;

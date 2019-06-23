@@ -22,12 +22,19 @@ body {
   --grey-color-1: #ececec;
   --yellow-color: #eabf00;
   --white-color: #ffffff;
+  --red-color: #d8000c;
 }
 
-.container {
+.container,
+.container--left {
   margin: 6rem auto;
   width: 1250px;
   display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container--left {
+  transform: translateX(-20rem);
 }
 
 /* buttons */
@@ -152,4 +159,47 @@ body {
   display: block;
   width: 2rem;
   margin: 2rem 0;
+}
+
+/* text colors */
+.yellow-text {
+  color: var(--yellow-color);
+}
+
+.red-text {
+  color: var(--red-color);
+}
+/* text colors */
+
+/* ::after, ::before stuff */
+.arrow-box {
+  position: relative;
+  background: var(--grey-color-1);
+  border: 4px solid var(--grey-color-1);
+}
+
+.arrow-box:after,
+.arrow-box:before {
+  top: 0.5rem;
+  left: -25rem;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow-box:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: var(--grey-color-1);
+  border-width: 13px;
+  margin-left: -13px;
+}
+
+.arrow-box:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-top-color: var(--grey-color-1);
+  border-width: 10px;
+  margin-left: -10px;
 }

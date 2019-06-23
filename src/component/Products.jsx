@@ -7,11 +7,11 @@ import Product from "./Product";
 import {
   getData,
   addToCart,
-  IncreaseQuantity
+  increaseQuantity
 } from "../redux/actions/dataActions";
 import { connect } from "react-redux";
 
-const Products = ({ data, getData, addToCart, cart, IncreaseQuantity }) => {
+const Products = ({ data, getData, addToCart, cart, increaseQuantity }) => {
   useEffect(() => {
     getData();
   });
@@ -37,7 +37,7 @@ const Products = ({ data, getData, addToCart, cart, IncreaseQuantity }) => {
               product={data}
               index={index}
               addToCart={addToCart}
-              IncreaseQuantity={IncreaseQuantity}
+              increaseQuantity={increaseQuantity}
               cart={cart}
             />
           );
@@ -58,7 +58,7 @@ const mapDispatchToProps = dispatch => {
   return {
     getData: () => dispatch(getData()),
     addToCart: (product, img) => dispatch(addToCart(product, img)),
-    IncreaseQuantity: id => dispatch(IncreaseQuantity(id))
+    increaseQuantity: id => dispatch(increaseQuantity(id))
   };
 };
 

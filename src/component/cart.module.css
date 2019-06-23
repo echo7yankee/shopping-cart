@@ -93,6 +93,7 @@
   display: flex;
   align-items: center;
   margin-top: 4rem;
+  position: relative;
 }
 
 .cart img {
@@ -164,3 +165,59 @@
 .totalContainer button:hover {
   padding: 10px 180px;
 }
+
+.stockLimit,
+.stockLimitNone {
+  position: absolute;
+  left: 0;
+  bottom: 10rem;
+  width: max-content;
+  background: var(--grey-color-1);
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  display: flex;
+  align-items: center;
+  animation: animateDown 0.2s ease-in-out;
+}
+
+.stocklimitNone {
+  animation: animateUp 0.2s ease-in-out;
+}
+
+.stockLimit span {
+  margin: 0;
+}
+
+.incrementalBtn {
+  padding: 0.2rem 0.3rem;
+  width: 15px;
+  background-color: var(--grey-color-1);
+  margin-top: 0.3rem;
+}
+
+.incrementalBtn:hover {
+  background: var(--grey-color);
+  color: var(--white-color);
+}
+
+/* keyframes */
+@keyframes animateDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animateUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+/* keyframes */

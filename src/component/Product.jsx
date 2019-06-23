@@ -3,7 +3,7 @@ import { imgsBg, imgsSm } from "../data/imgs";
 
 import style from "./products.module.css";
 
-const Product = ({ product, index, addToCart, cart, IncreaseQuantity }) => {
+const Product = ({ product, index, addToCart, cart, increaseQuantity }) => {
   let identicalProduct;
 
   const addProduct = product => {
@@ -12,7 +12,7 @@ const Product = ({ product, index, addToCart, cart, IncreaseQuantity }) => {
     });
 
     if (identicalProduct === true) {
-      IncreaseQuantity(product.id);
+      increaseQuantity(product.id);
       return;
     }
 
@@ -26,6 +26,18 @@ const Product = ({ product, index, addToCart, cart, IncreaseQuantity }) => {
           <span>Free shipping</span>
         </div>
       )}
+      <div className={style.installment}>
+        <span>
+          {product.installments > 0 ? (
+            <span>
+              On stock{" "}
+              <span className="yellow-text">{product.installments}</span>
+            </span>
+          ) : (
+            <span className="red-text"> Sold out </span>
+          )}
+        </span>
+      </div>
       <div>
         <img src={imgsBg[index].img} alt="t-shirt" />
         <p className={`${style.title} mt-2`}>{product.title}</p>

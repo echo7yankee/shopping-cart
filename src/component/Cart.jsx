@@ -8,10 +8,20 @@ import { connect } from "react-redux";
 import {
   deleteFromCart,
   onToggle,
-  clearCart
+  clearCart,
+  increaseQuantity,
+  decreaseQuantity
 } from "../redux/actions/dataActions";
 
-const Cart = ({ toggle, cart, deleteFromCart, onToggle, clearCart }) => {
+const Cart = ({
+  toggle,
+  cart,
+  deleteFromCart,
+  onToggle,
+  clearCart,
+  increaseQuantity,
+  decreaseQuantity
+}) => {
   const subtotal = cart
     .map(cartItem => {
       return cartItem.quantity * cartItem.price;
@@ -56,6 +66,8 @@ const Cart = ({ toggle, cart, deleteFromCart, onToggle, clearCart }) => {
                 key={cart.id}
                 cart={cart}
                 deleteFromCart={deleteFromCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
               />
             );
           })}
@@ -90,7 +102,9 @@ const mapDispatchToProps = dispatch => {
   return {
     deleteFromCart: id => dispatch(deleteFromCart(id)),
     onToggle: () => dispatch(onToggle()),
-    clearCart: () => dispatch(clearCart())
+    clearCart: () => dispatch(clearCart()),
+    increaseQuantity: id => dispatch(increaseQuantity(id)),
+    decreaseQuantity: id => dispatch(decreaseQuantity(id))
   };
 };
 
