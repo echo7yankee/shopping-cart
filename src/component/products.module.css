@@ -79,3 +79,22 @@
   font-weight: 500;
   color: var(--grey-color);
 }
+
+.availableSizes {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--black-color-1);
+  color: var(--white-color);
+  border-radius: 3px;
+  padding: 3px 5px;
+  width: 90%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  transition-delay: 0.3s;
+}
+
+.product:hover .availableSizes {
+  opacity: 1;
+}

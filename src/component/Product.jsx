@@ -38,6 +38,9 @@ const Product = ({ product, index, addToCart, cart, increaseQuantity }) => {
           )}
         </span>
       </div>
+      <div className={style.availableSizes}>
+        <span>Availabale in sizes {product.availableSizes.join(", ")}</span>
+      </div>
       <div>
         <img src={imgsBg[index].img} alt="t-shirt" />
         <p className={`${style.title} mt-2`}>{product.title}</p>
